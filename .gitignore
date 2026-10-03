@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.vscode/
+.idea/
+# Real participant data must never be committed (the folder note is kept)
+data/participants/*
+!data/participants/README.txt

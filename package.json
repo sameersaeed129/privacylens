@@ -1,0 +1,15 @@
+{
+  "name": "privacylens",
+  "version": "1.1.0",
+  "description": "Smart home privacy dashboard and usability study kit for HCI research",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --directory app",
+    "test": "node --test tests/model.test.js tests/ui.test.js && python3 -m unittest discover -s tests -v",
+    "analyze": "python3 analysis/analyze.py data/sample_results.csv"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

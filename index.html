@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrivacyLens: smart home privacy study</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><h1>Smart home privacy study</h1></header>
+<main>
+  <section id="start" class="panel">
+    <h2>Welcome</h2>
+    <p>You will complete 5 short tasks in a smart home app, then answer 10 questions about your experience. It takes about 10 minutes. Your answers stay in this browser until you download them.</p>
+    <form id="startform">
+      <label>Participant ID <input id="pid" required pattern="[A-Za-z0-9_\-]+" placeholder="e.g. P01" autocomplete="off"></label>
+      <label>Condition
+        <select id="cond">
+          <option value="auto">Automatic (odd ID = A, even ID = B)</option>
+          <option value="A">A: nested settings</option>
+          <option value="B">B: privacy dashboard</option>
+        </select>
+      </label>
+      <label>Design
+        <select id="design">
+          <option value="between">Between subjects: one interface per participant</option>
+          <option value="within">Within subjects: both interfaces (order alternates by ID)</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="explain"> Demo only: show explained alerts (extension, not used in the study)</label>
+      <label class="check"><input type="checkbox" id="consent" required> I agree to take part. I know I can stop at any time.</label>
+      <div class="btns">
+        <button class="primary" type="submit">Start study</button>
+        <button class="ghost" type="button" id="demo">Explore without tasks</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="study" hidden>
+    <aside id="task" class="panel" aria-live="polite"></aside>
+    <div id="frame" class="frame"></div>
+  </section>
+
+  <section id="sus" class="panel" hidden></section>
+  <section id="done" class="panel" hidden></section>
+</main>
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
